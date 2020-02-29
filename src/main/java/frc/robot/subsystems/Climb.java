@@ -36,7 +36,6 @@ public class Climb {
     double upperVelocity = 0.0; // Value to be set after testing.
     double lowerVelocity = 0.0; // Value to be set after testing.
     double climbUpVelocity = 0.25; // Value to be set after testing.
-    double climbDownVelocity = 0.05; // Value to be set after testing.
     //--------------------------------\\
     
     //------------------------------------------------\\
@@ -65,11 +64,7 @@ public class Climb {
             if (controller1.getTriggerAxis(kRight) > 0.05) {
                 if (controller1.getY(kRight) > 0.05) {
                     Climb_Motor1.set(climbUpVelocity);  // "throttle = controller.getY(kLeft);"  Keep this in mind!!!
-                    Climb_Motor2.set(climbUpVelocity);
-                }
-                if (controller1.getY(kRight) < -0.05) {
-                    Climb_Motor1.set(climbDownVelocity);
-                    Climb_Motor2.set(climbDownVelocity);    
+                    Climb_Motor2.set(climbUpVelocity);  
                 } 
             // Failsafe (C-1):
             else {
